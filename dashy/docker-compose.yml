@@ -1,0 +1,13 @@
+---
+version: "3.3"
+services:
+   dashy:
+         image: lissy93/dashy
+         container_name: Dashy
+         volumes:
+                 - /config/dashy:/app/public
+         ports:
+                 - 4000:80
+         environment:
+                 - NODE_ENV=production
+         restart: unless-stopped
