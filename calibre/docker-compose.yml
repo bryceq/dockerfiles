@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre:latest
+    container_name: calibre
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - PASSWORD= #optional
+      - CLI_ARGS= #optional
+    volumes:
+            - /home/slime/calibre/config:/config
+    ports:
+      - 8090:8080
+      - 8091:8081
+    restart: unless-stopped
